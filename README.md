@@ -1,2 +1,2 @@
 # workstation-config
-Automate personal workstation config for OSX. Will add some linux compatibility soon. 
+Automate personal workstation config and install some commmon utils and software for OSX. Will add some compatibility for linux environments soon. 
