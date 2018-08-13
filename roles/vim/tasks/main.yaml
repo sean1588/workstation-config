@@ -1,0 +1,8 @@
+---
+- name: Install vim
+  homebrew:
+    name: vim
+    state: "{{ package_state }}"
+
+
+# need to add module to clone down git repo with vimrc and plugins.

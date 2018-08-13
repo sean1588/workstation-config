@@ -1,0 +1,14 @@
+---
+- name: copy bash profile
+  copy:
+    src: .bash_profile
+    dest: ~/.bash_profile
+    mode: 0755
+    force: "{{ overwrite_files }}"
+
+- name: copy git config
+  copy:
+    src: .gitconfig
+    dest: ~/.gitconfig
+    mode: 0755
+    force: "{{ overwrite_files }}"

@@ -1,0 +1,9 @@
+---
+- name: Install Docker
+  homebrew:
+    name: "{{ item }}"
+    state: "{{ package_state }}"
+  loop:
+    - docker
+    - docker-machine
+

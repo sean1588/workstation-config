@@ -1,0 +1,16 @@
+---
+- hosts:
+  - localhost
+  vars:
+    package_state: present
+
+  roles:
+    - {role: general_utils, tags: utils}
+    - {role: dot_file_stuff, tags: utils}
+    - {role: iterm, tags: utils}
+    - {role: vim, tags: vim}
+    - {role: editors, tags: editors}
+    - {role: docker, tags: docker}
+    - {role: virtualbox, tags: virtualbox}
+    - {role: vagrant, tags: vagrant}
+    - {role: browsers, tags: browsers}

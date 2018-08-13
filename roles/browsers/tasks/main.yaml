@@ -1,0 +1,9 @@
+---
+- name: Install Browsers
+  homebrew_cask:
+    name: "{{ item }}"
+    state: "{{ package_state }}"
+    accept_external_apps: True
+  loop:
+    - google-chrome
+    - firefox
