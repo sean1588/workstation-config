@@ -52,10 +52,10 @@ alias uuid="python -c 'import sys,uuid; v4Uuid = uuid.uuid4().urn.replace(\"urn:
 function display_kubernetes_context() {
       kubectl config get-contexts | grep '^\*' | awk '{print $2}' | tr a-z A-Z
 }
-PS1_KUBE="${PURPLE} [K8s @ \$(display_kubernetes_context)]\\[\\e[0m\\]"
+# PS1_KUBE="${PURPLE} [K8s @ \$(display_kubernetes_context)]\\[\\e[0m\\]"
 PS1_TIME="\[\e[33m\][\d \T]"
 PS1_PWD="\[\e[36m\]\w"
-PS1="\[\e]0;\w\a\]\n\[\e[34m\]Sean @ CTL ${PS1_KUBE} ${PS1_TIME} ${PS1_PWD}\n \[\e[0;0m\] "
+PS1="\[\e]0;\w\a\]\n\[\e[34m\]Sean @ CTL ${PS1_TIME} ${PS1_PWD}\n \[\e[0;0m\] "
 
 # Define some colors:
 RED='\[\e[1;31m\]'
