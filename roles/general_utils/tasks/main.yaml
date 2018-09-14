@@ -12,6 +12,7 @@
     - tree
     - wget
     - git
+    - tig
     - tmux
     - ack
     - jq
