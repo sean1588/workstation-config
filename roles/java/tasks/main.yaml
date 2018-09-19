@@ -1,0 +1,8 @@
+---
+- name: Install java fedora
+  when: ansible_distribution|lower == 'fedora'
+  dnf:
+    name: 
+      - maven
+    state: "{{ package_state }}"
+  become: yes

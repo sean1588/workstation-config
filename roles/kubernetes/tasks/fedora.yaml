@@ -1,0 +1,6 @@
+---
+- name: Install Kubernetes Client
+  dnf:
+    name: 
+      - kubernetes-client
+    state: "{{ package_state }}"

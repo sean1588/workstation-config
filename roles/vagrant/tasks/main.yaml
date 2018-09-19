@@ -1,5 +1,6 @@
 ---
 - name: Install Vagrant
+  when: ansible_distribution|lower == 'darwin'
   homebrew_cask:
     name: vagrant 
     state: "{{ package_state }}"

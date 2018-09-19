@@ -1,31 +1,7 @@
 ---
-- name: Install utilities
-  homebrew:
-    name: "{{ item }}"
-    state: "{{ package_state }}"
-  loop:
-    - coreutils
-    - screen
-    - curl
-    - rsync
-    - telnet
-    - tree
-    - wget
-    - git
-    - tig
-    - tmux
-    - ack
-    - jq
-    - httpie
-    - openvpn
-    - openssl
-
-- name: Install Tunnelblick
-  homebrew_cask:
-    name: tunnelblick
-    state: "{{ package_state }}"
-
-- name: Install Postman
-  homebrew_cask:
-    name: postman
-    state: "{{ package_state }}"
+- import_tasks: mac.yaml
+  when: ansible_distribution|lower == 'darwin'
+  
+- import_tasks: fedora.yaml
+  when: ansible_distribution|lower == 'fedora'
+  become: yes

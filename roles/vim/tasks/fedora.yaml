@@ -1,0 +1,6 @@
+---
+- name: Install vim
+  dnf:
+    name: vim
+    state: "{{ package_state }}"
+

@@ -1,12 +1,3 @@
 ---
-- name: Install Atom
-  homebrew_cask:
-    name: atom
-    state: "{{ package_state }}"
-    accept_external_apps: True
-
-- name: Install Sublime
-  homebrew_cask:
-    name: sublime
-    state: "{{ package_state }}"
-    accept_external_apps: True
+- import_tasks: mac.yaml
+  when: ansible_distribution|lower == 'darwin'

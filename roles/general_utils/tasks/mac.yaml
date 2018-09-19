@@ -1,0 +1,34 @@
+---
+- name: Install utilities
+  homebrew:
+    name: "{{ item }}"
+    state: "{{ package_state }}"
+  loop:
+    - coreutils
+    - screen
+    - curl
+    - rsync
+    - telnet
+    - tree
+    - wget
+    - git
+    - tig
+    - tmux
+    - ack
+    - jq
+    - httpie
+    - openvpn
+    - openssl
+
+
+- name: Install Tunnelblick
+  when: ansible_distribution|lower == 'darwin'
+  homebrew_cask:
+    name: tunnelblick
+    state: "{{ package_state }}"
+
+- name: Install Postman
+  when: ansible_distribution|lower == 'darwin'
+  homebrew_cask:
+    name: postman
+    state: "{{ package_state }}"

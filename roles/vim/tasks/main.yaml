@@ -1,13 +1,7 @@
 ---
-- name: Install vim
-  homebrew:
-    name: vim
-    state: "{{ package_state }}"
-
-- name: Clone .vim repo and install submodules
-  git:
-    repo: "https://github.com/sean1588/.vim"    
-    dest: ~/
-    recursive: yes
-    track_submodules: yes
-# need to add module to clone down git repo with vimrc and plugins.
+- import_tasks: mac.yaml
+  when: ansible_distribution|lower == 'darwin'
+  
+- import_tasks: fedora.yaml
+  when: ansible_distribution|lower == 'fedora'
+  become: yes

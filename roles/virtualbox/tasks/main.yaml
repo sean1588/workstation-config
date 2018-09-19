@@ -1,5 +1,6 @@
 ---
 - name: Install VirtualBox
+  when: ansible_distribution|lower == 'darwin'
   homebrew_cask:
     name: virtualbox
     state: "{{ package_state }}"

@@ -1,0 +1,8 @@
+---
+- name: Install npm
+  when: ansible_distribution|lower == 'fedora'
+  dnf:
+    name: npm
+    state: "{{ package_state }}"
+  become: yes
+

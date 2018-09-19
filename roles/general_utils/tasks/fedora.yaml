@@ -1,0 +1,23 @@
+- name: Install utilities fedora
+  dnf:
+    name: "{{ item }}"
+    state: "{{ package_state }}"
+  loop:
+    - coreutils
+    - screen
+    - curl
+    - rsync
+    - telnet
+    - tree
+    - wget
+    - git
+    - tig
+    - tmux
+    - ack
+    - jq
+    - httpie
+    - openvpn
+    - openssl
+    - libselinux-python 
+    - nano
+  become: yes
