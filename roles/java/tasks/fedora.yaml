@@ -1,0 +1,10 @@
+---
+- name: Install java fedora
+  when: ansible_distribution|lower == 'fedora'
+  dnf:
+    name: "{{ item }}"
+    state: "{{ package_state }}"
+  loop:
+    - maven
+    - eclipse
+  become: yes
