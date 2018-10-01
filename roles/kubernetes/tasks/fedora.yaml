@@ -1,6 +1,21 @@
 ---
 - name: Install Kubernetes Client
   dnf:
-    name: 
-      - kubernetes-client
+    name: "{{ item }}"
     state: "{{ package_state }}"
+  loop:
+    - kubernetes-client
+    - kubernetes
+    - libvirt-daemon-kvm
+    - qemu-kvm
+
+- name: Download minikube
+  get_url:
+    url: "https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64"
+    dest: /tmp
+
+- name: Copy minikube to usr/local/bin
+  copy:
+    src: /tmp/minikube-linux-amd64
+    dest: /usr/local/bin/minikube
+    mode: "+x"

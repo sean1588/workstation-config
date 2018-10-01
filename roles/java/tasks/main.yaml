@@ -1,8 +1,5 @@
 ---
-- name: Install java fedora
+- import_tasks: fedora.yaml
   when: ansible_distribution|lower == 'fedora'
-  dnf:
-    name: 
-      - maven
-    state: "{{ package_state }}"
   become: yes
+

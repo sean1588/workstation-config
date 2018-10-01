@@ -7,6 +7,18 @@
     gpgcheck: yes
     gpgkey: https://download.docker.com/linux/fedora/gpg
     enabled: yes
+ 
+- name: Install Docker kvm2 driver
+  get_url:
+    url: "https://storage.googleapis.com/minikube/releases/latest/docker-machine-driver-kvm2"
+    dest: /tmp
+  become: yes
+
+- name: Copy Docker kvm2 to usr/local/bin
+  copy:
+    src: /tmp/docker-machine-driver-kvm2
+    dest: /usr/local/bin/docker-machine-driver-kvm2
+    mode: "+x"
 
 - name: Install Docker
   dnf:

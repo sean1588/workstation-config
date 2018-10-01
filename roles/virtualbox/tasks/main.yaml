@@ -5,3 +5,35 @@
     name: virtualbox
     state: "{{ package_state }}"
 
+- name: Download Virtualbox
+  when: ansible_distribution|lower == 'fedora'
+  get_url:
+    url: "http://download.virtualbox.org/virtualbox/rpm/fedora/virtualbox.repo"
+    dest: /etc/yum.repos.d/
+  become: yes
+
+- name: Install VirtualBox deps
+  when: ansible_distribution|lower == 'fedora'
+  dnf:
+    name: "{{ item }}"
+    state: "{{ package_state }}"
+  loop:
+    - binutils
+    - gcc
+    - make
+    - patch
+    - libgomp
+    - glibc-headers
+    - glibc-devel
+    - kernel-headers
+    - kernel-devel
+    - dkms
+    - vboxdrv
+  become: yes
+
+- name: Install VirtualBox Fedora
+  when: ansible_distribution|lower == 'fedora'
+  dnf:
+    name: VirtualBox-5.2
+    state: "{{ package_state }}"
+  become: yes

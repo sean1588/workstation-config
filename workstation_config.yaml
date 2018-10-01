@@ -10,8 +10,8 @@
     - {role: iterm, tags: terminals}
     - {role: vim, tags: vim}
     - {role: editors, tags: editors}
-    - {role: docker, tags: docker}
     - {role: virtualbox, tags: virtualbox}
+    - {role: docker, tags: docker}
     - {role: vagrant, tags: vagrant}
     - {role: browsers, tags: browsers}
     - {role: java, tags: java}
