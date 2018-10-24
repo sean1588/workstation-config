@@ -4,5 +4,5 @@ Automate personal workstation config and install some commmon utils and software
 Run ``` ./run_config.sh ``` if you need to also install homebrew, ansible, python, else just run the playbook.
 
 by the way... do not run the shell script unless you have read it, it is inteded for MY use only. It may configure stuff you do not want to.
-
-# got inspiration from @bschwedler. thank you!
+ 
+got inspiration from @bschwedler. thank you!
